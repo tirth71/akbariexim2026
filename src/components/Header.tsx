@@ -114,16 +114,6 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-
-            {/* Mobile Translate */}
-            <div className="translate-widget flex items-center gap-2 border rounded-lg p-2">
-              <Globe className="w-4 h-4 text-green-600" />
-              {/* <div id="google_translate_element"></div> */}
-            </div>
-
-            <Button className="w-full bg-green-600 text-white mt-2">
-              <Link to="/contact">Get Quote</Link>
-            </Button>
           </motion.div>
         )}
       </AnimatePresence>
