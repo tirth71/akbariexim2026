@@ -246,7 +246,6 @@ const Contact = () => {
   >
     <SelectItem value="spices">Fresh Vegetables</SelectItem>
     <SelectItem value="spices">Premium Fruits</SelectItem>
-
     <SelectItem value="pulses">Premium Spices</SelectItem>
     <SelectItem value="nuts">Basmati & Non-Basmati Rice</SelectItem>
     <SelectItem value="grains">Oil Seeds</SelectItem>
@@ -324,7 +323,7 @@ const Contact = () => {
                 {[
                   { icon: MapPin, label: "Address", value: "Yogichowk , Surat, Gujarat 395010, India" },
                   { icon: Phone, label: "Phone", value: "+91 93164 90925" },
-                  { icon: Mail, label: "Email", value: "info@globalexim.com" },
+                  { icon: Mail, label: "Email", value: "info@akbariexim.com" },
                   { icon: Clock, label: "Office Hours", value: "Mon - Sat: 9:00 AM – 6:00 PM IST" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4">
@@ -339,8 +338,18 @@ const Contact = () => {
                 ))}
               </div>
               <Button variant="outline" className="rounded-xl border-primary text-primary hover:bg-primary hover:text-white" asChild>
-                <a href="https://wa.me/919316490925?text=Hello%2C%20I%20am%20interested%20in%20your%20products." target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-4 h-4 mr-2" /> Chat on WhatsApp
+               <a
+                  href="https://wa.me/919316490925"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                    alt="WhatsApp"
+                    className="w-5 h-5"
+                  />
+                  WhatsApp Us
                 </a>
               </Button>
             </motion.div>
@@ -373,11 +382,11 @@ const Contact = () => {
 
                   {/* Call Button */}
                   <a
-                    href="tel:+919687391793"
+                    href="tel:+919316490925"
                     className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-medium hover:bg-primary/90 transition"
                   >
                     <Phone className="w-5 h-5" />
-                    Call Now: +91 98765 43210
+                    Call Now: +91 93164 90925
                   </a>
 
                   {/* Email Button */}

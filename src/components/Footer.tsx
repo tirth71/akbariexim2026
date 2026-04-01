@@ -28,7 +28,7 @@ const Footer = () => (
               src={logo}
               alt="AkbariExim Logo"
               className="h-24 w-auto object-contain"
-            
+
             />
 
             <span className="text-xl font-bold">
@@ -49,7 +49,7 @@ const Footer = () => (
               <Link to="/" className="hover:text-primary">Home</Link>
               <Link to="/about" className="hover:text-primary">About Us</Link>
               <Link to="/products" className="hover:text-primary">Our Products</Link>
-              {/* <Link to="/faq" className="hover:text-primary">FAQs</Link> */}
+              <Link to="/certificates" className="hover:text-primary">Certificates</Link>
               <Link to="/contact" className="hover:text-primary">Contact Us</Link>
             </div>
 
@@ -182,12 +182,12 @@ const Footer = () => (
             </a>
 
             <a
-            href="https://www.facebook.com/share/1FFrqUo95T/"
+              href="https://www.facebook.com/share/1FFrqUo95T/"
               target="_blank"
               rel="noopener noreferrer"
-            className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition"
+              className="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-foreground/10 hover:bg-primary hover:text-white transition"
             >
-             
+
               <Facebook className="w-4 h-4" />
             </a>
 
@@ -197,8 +197,19 @@ const Footer = () => (
 
       </div>
 
-      <div className="border-t border-secondary-foreground/10 mt-14 pt-6 text-center text-sm text-secondary-foreground/50">
+      <div className="border-t border-secondary-foreground/10 mt-14 pt-6 text-center text-sm text-secondary-foreground/80">
         © {new Date().getFullYear()} AkbariExim. All rights reserved.
+      </div>
+      <div className="w-full text-center text-primary-foreground/80 text-sm">
+        Developed by{" "}
+        <a
+          href="https://www.linkedin.com/in/tirth-savaliya-115187252"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-accent"
+        >
+          Tirthsavaliya
+        </a>
       </div>
     </div>
   </footer>
