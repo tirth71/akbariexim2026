@@ -244,14 +244,15 @@ const Contact = () => {
     sideOffset={6}
     className="z-50 rounded-xl shadow-lg [&_[data-highlighted]]:bg-primary [&_[data-highlighted]]:text-white"
   >
-    <SelectItem value="spices">Spices & Seasonings</SelectItem>
-    <SelectItem value="pulses">Pulses & Lentils</SelectItem>
-    <SelectItem value="nuts">Nuts & Seeds</SelectItem>
-    <SelectItem value="grains">Grains & Rice</SelectItem>
-    <SelectItem value="aluminum">Aluminum Scrap</SelectItem>
-    <SelectItem value="copper">Copper Scrap</SelectItem>
-    <SelectItem value="steel">Steel Scrap</SelectItem>
-    <SelectItem value="other">Other - Specify in message</SelectItem>
+    <SelectItem value="spices">Fresh Vegetables</SelectItem>
+    <SelectItem value="spices">Premium Fruits</SelectItem>
+
+    <SelectItem value="pulses">Premium Spices</SelectItem>
+    <SelectItem value="nuts">Basmati & Non-Basmati Rice</SelectItem>
+    <SelectItem value="grains">Oil Seeds</SelectItem>
+    <SelectItem value="aluminum">Grains & Pulses</SelectItem>
+    <SelectItem value="copper">Edible Oils</SelectItem>
+ 
   </SelectContent>
 </Select>
 

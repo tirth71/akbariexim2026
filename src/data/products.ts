@@ -288,7 +288,7 @@ export const categories: ProductCategory[] = [
     moisture: "Max 12%",
     packaging: "25 Kg Bags",
     quality: "ASTA 80-120",
-    exportCountries: ["USA", "Thailand", "China"],
+    exportCountries: ["USA", "UK", "Japan"],
     certifications: ["Spice Board", "FSSAI"],
     specifications: {
       Color: "Deep Red",
