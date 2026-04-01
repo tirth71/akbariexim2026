@@ -31,9 +31,23 @@ const Header = () => {
               className="h-20 w-auto object-contain"
             />
 
-            <span className="font-bold text-lg">
+            {/* <span className="font-bold text-lg">
               AKBARI <span className="text-green-600">EXIM</span>
-            </span>
+            </span> */}
+
+{/* <span className="font-bold text-lg bg-gradient-to-r from-black via-green-400 to-white bg-[length:200%_100%] bg-clip-text text-transparent animate-[shine_3s_linear_infinite]">
+  AKBARI EXIM
+</span> */}
+
+
+ 
+
+<span className="font-bold text-lg text-bl">
+  𝐀𝐊𝐁𝐀𝐑𝐈{" "}
+  <span className="bg-gradient-to-r from-green-800 via-green-400 to-green-800 bg-[length:200%_100%] bg-clip-text text-transparent animate-shine">
+    𝐄𝐗𝐈𝐌
+  </span>
+</span>
           </div>
         </Link>
 
@@ -44,8 +58,8 @@ const Header = () => {
               key={link.to}
               to={link.to}
               className={`px-4 py-2 rounded-lg text-sm ${location.pathname === link.to
-                  ? "bg-green-100 text-green-700"
-                  : "text-gray-600 hover:bg-gray-100"
+                ? "bg-green-100 text-green-700"
+                : "text-gray-600 hover:bg-gray-100"
                 }`}
             >
               {link.label}
