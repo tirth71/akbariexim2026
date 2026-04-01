@@ -149,10 +149,10 @@ const Footer = () => (
               info@akbariexim.com
             </a>
 
-            <li className="flex gap-3">
+            <a href="tel:+919687391793" className="flex gap-3">
               <Phone className="w-4 h-4 text-primary" />
               +91 93164 90925
-            </li>
+            </a>
 
             <li className="flex gap-3">
               <MapPin className="w-4 h-4 text-primary" />
