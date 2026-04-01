@@ -202,94 +202,93 @@ const Contact = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
-            
 
 
             {/* Form */}
-<motion.form
-  onSubmit={handleSubmit}
-  className="bg-muted rounded-2xl p-8 space-y-6"
-  initial={{ opacity: 0, x: 20 }}
-  animate={{ opacity: 1, x: 0 }}
->
+            <motion.form
+              onSubmit={handleSubmit}
+              className="bg-muted rounded-2xl p-8 space-y-6"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+            >
 
-  <div>
-    <h3 className="text-2xl font-bold text-foreground mb-8">
-      Get a Detailed Quote
-    </h3>
-    <p className="text-muted-foreground text-sm mb-8">
-      Provide us with your requirements and we'll prepare a comprehensive quote with specifications, documentation, and logistics details.
-    </p>
-  </div>
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-8">
+                  Get a Detailed Quote
+                </h3>
+                <p className="text-muted-foreground text-sm mb-8">
+                  Provide us with your requirements and we'll prepare a comprehensive quote with specifications, documentation, and logistics details.
+                </p>
+              </div>
 
-{/* Grid Fields */}
-<div className="grid md:grid-cols-2 gap-4">
+              {/* Grid Fields */}
+              <div className="grid md:grid-cols-2 gap-4">
 
-  <Input placeholder="Full Name *" className="rounded-xl bg-background" required />
-  <Input placeholder="Company Name *" className="rounded-xl bg-background" required />
+                <Input placeholder="Full Name *" className="rounded-xl bg-background" required />
+                <Input placeholder="Company Name *" className="rounded-xl bg-background" required />
 
-  <Input type="email" placeholder="Email Address *" className="rounded-xl bg-background" required />
-  <Input placeholder="Phone Number *" className="rounded-xl bg-background" required />
+                <Input type="email" placeholder="Email Address *" className="rounded-xl bg-background" required />
+                <Input placeholder="Phone Number *" className="rounded-xl bg-background" required />
 
-  <Input placeholder="Country *" className="rounded-xl bg-background" required />
+                <Input placeholder="Country *" className="rounded-xl bg-background" required />
 
-  {/* Product Type */}
-  <Select>
-  <SelectTrigger className="w-full rounded-xl bg-background border border-border">
-    <SelectValue placeholder="Select product category" />
-  </SelectTrigger>
+                {/* Product Type */}
+                <Select>
+                  <SelectTrigger className="w-full rounded-xl bg-background border border-border">
+                    <SelectValue placeholder="Select product category" />
+                  </SelectTrigger>
 
-  <SelectContent
-    position="popper"
-    sideOffset={6}
-    className="z-50 rounded-xl shadow-lg [&_[data-highlighted]]:bg-primary [&_[data-highlighted]]:text-white"
-  >
-    <SelectItem value="spices">Fresh Vegetables</SelectItem>
-    <SelectItem value="spices">Premium Fruits</SelectItem>
-    <SelectItem value="pulses">Premium Spices</SelectItem>
-    <SelectItem value="nuts">Basmati & Non-Basmati Rice</SelectItem>
-    <SelectItem value="grains">Oil Seeds</SelectItem>
-    <SelectItem value="aluminum">Grains & Pulses</SelectItem>
-    <SelectItem value="copper">Edible Oils</SelectItem>
- 
-  </SelectContent>
-</Select>
+                  <SelectContent
+                    position="popper"
+                    sideOffset={6}
+                    className="z-50 rounded-xl shadow-lg [&_[data-highlighted]]:bg-primary [&_[data-highlighted]]:text-white"
+                  >
+                    <SelectItem value="spices">Fresh Vegetables</SelectItem>
+                    <SelectItem value="spices">Premium Fruits</SelectItem>
+                    <SelectItem value="pulses">Premium Spices</SelectItem>
+                    <SelectItem value="nuts">Basmati & Non-Basmati Rice</SelectItem>
+                    <SelectItem value="grains">Oil Seeds</SelectItem>
+                    <SelectItem value="aluminum">Grains & Pulses</SelectItem>
+                    <SelectItem value="copper">Edible Oils</SelectItem>
 
-</div>
+                  </SelectContent>
+                </Select>
 
-{/* Inquiry Type */}
-<div className="space-y-2">
+              </div>
 
-  <Select>
-  <SelectTrigger className="w-full rounded-xl bg-background border border-border">
-    <SelectValue placeholder="What can we help you with?" />
-  </SelectTrigger>
+              {/* Inquiry Type */}
+              <div className="space-y-2">
 
-  <SelectContent
-    position="popper"
-    sideOffset={6}
-    className="z-50 rounded-xl shadow-lg [&_[data-highlighted]]:bg-primary [&_[data-highlighted]]:text-white"
-  >
-    <SelectItem value="quote">Request Quote</SelectItem>
-    <SelectItem value="samples">Request Samples</SelectItem>
-    <SelectItem value="partnership">Partnership Inquiry</SelectItem>
-    <SelectItem value="supplier">Become a Supplier</SelectItem>
-    <SelectItem value="product">Product Information</SelectItem>
-    <SelectItem value="other">Other</SelectItem>
-  </SelectContent>
-</Select>
+                <Select>
+                  <SelectTrigger className="w-full rounded-xl bg-background border border-border">
+                    <SelectValue placeholder="What can we help you with?" />
+                  </SelectTrigger>
 
-</div>
+                  <SelectContent
+                    position="popper"
+                    sideOffset={6}
+                    className="z-50 rounded-xl shadow-lg [&_[data-highlighted]]:bg-primary [&_[data-highlighted]]:text-white"
+                  >
+                    <SelectItem value="quote">Request Quote</SelectItem>
+                    <SelectItem value="samples">Request Samples</SelectItem>
+                    <SelectItem value="partnership">Partnership Inquiry</SelectItem>
+                    <SelectItem value="supplier">Become a Supplier</SelectItem>
+                    <SelectItem value="product">Product Information</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
 
-  {/* Detailed Requirements */}
-  <div className="space-y-2">
-  <label className="text-sm font-semibold text-foreground">
-    Detailed Requirements *
-  </label>
+              </div>
 
-  <Textarea
-    className="w-full rounded-xl border border-border bg-background px-4 py-4 text-sm leading-6 resize-none h-[250px]"
-    placeholder={`Please provide details about:
+              {/* Detailed Requirements */}
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-foreground">
+                  Detailed Requirements *
+                </label>
+
+                <Textarea
+                  className="w-full rounded-xl border border-border bg-background px-4 py-4 text-sm leading-6 resize-none h-[250px]"
+                  placeholder={`Please provide details about:
 
 • Product specifications and grades
 • Quantity required (MT/containers)
@@ -298,22 +297,22 @@ const Contact = () => {
 • Timeline and frequency
 • Quality certifications needed
 • Any special requirements`}
-  />
-</div>
+                />
+              </div>
 
-  <Button
-    type="submit"
-    className="gradient-primary text-primary-foreground rounded-xl border-0"
-    size="lg"
-  >
-    <Send className="w-4 h-4 mr-2" />
-    Send Request for Quote
-  </Button>
+              <Button
+                type="submit"
+                className="gradient-primary text-primary-foreground rounded-xl border-0"
+                size="lg"
+              >
+                <Send className="w-4 h-4 mr-2" />
+                Send Request for Quote
+              </Button>
 
-</motion.form>
+            </motion.form>
 
 
-{/* Contact Info */}
+            {/* Contact Info */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-4">Get In Touch</h2>
@@ -338,7 +337,7 @@ const Contact = () => {
                 ))}
               </div>
               <Button variant="outline" className="rounded-xl border-primary text-primary hover:bg-primary hover:text-white" asChild>
-               <a
+                <a
                   href="https://wa.me/919316490925"
                   target="_blank"
                   rel="noopener noreferrer"

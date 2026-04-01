@@ -15,7 +15,7 @@ import {
   Phone,
 } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import founder from "@/assets/logo/AkbariExim-logo.png";
+import founder from "@/assets/founder/IMG_4545.JPG.jpeg";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
