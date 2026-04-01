@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, MessageCircle, FileText, Package, Clock } from "lucide-react";
+import QuoteFormDialog from "@/components/QuoteFormDialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,6 +16,7 @@ import {
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", product: "", message: "" });
+  const [quoteOpen, setQuoteOpen] = useState(false);
   const container = {
     hidden: {},
     visible: {
@@ -66,21 +68,21 @@ const Contact = () => {
         viewport={{ once: true }}
 
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-8">
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
 
             {/* General Inquiries */}
             <motion.div
-
               whileHover={{
-                y: -10,
-                scale: 1.03,
-                boxShadow: "0px 20px 40px rgba(0,0,0,0.1)"
+                borderColor: "#166433",
+                borderWidth: 2,
+                scale: 1.03
               }}
-              className="bg-muted rounded-2xl p-8 space-y-4 transition flex flex-col cursor-pointer"
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="bg-muted rounded-2xl p-8 space-y-4 flex flex-col cursor-pointer border border-transparent"
             >
-              <motion.div whileHover={{ rotate: 5, scale: 1.1 }}>
+              <motion.div>
                 <MessageCircle className="w-8 h-8 text-primary" />
               </motion.div>
 
@@ -96,23 +98,31 @@ const Contact = () => {
 
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=info@akbariexim.com"
-                className="font-medium text-primary hover:underline"
+                className="relative inline-block self-start text-primary font-medium cursor-pointer
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+                after:w-full after:bg-primary
+                after:scale-x-0 after:origin-left
+                after:transition-transform after:duration-300
+                hover:after:scale-x-100"
               >
                 Send us an email →
               </a>
             </motion.div>
 
             {/* Request Quote */}
-            <motion.div
 
+
+
+            <motion.div
               whileHover={{
-                y: -10,
-                scale: 1.03,
-                boxShadow: "0px 20px 40px rgba(0,0,0,0.1)"
+                borderColor: "#166433",
+                borderWidth: 2,
+                scale: 1.03
               }}
-              className="bg-muted rounded-2xl p-8 space-y-4 transition flex flex-col cursor-pointer"
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="bg-muted rounded-2xl p-8 space-y-4 flex flex-col cursor-pointer border border-transparent"
             >
-              <motion.div whileHover={{ rotate: -5, scale: 1.1 }}>
+              <motion.div>
                 <FileText className="w-8 h-8 text-primary" />
               </motion.div>
 
@@ -126,23 +136,36 @@ const Contact = () => {
                 <li>Shipping and logistics planning</li>
               </ul>
 
-              <a href="#" className="font-medium text-primary hover:underline">
+              <a
+                onClick={() => setQuoteOpen(true)}
+                className="relative inline-block self-start text-primary font-medium cursor-pointer
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+                after:w-full after:bg-primary
+                after:scale-x-0 after:origin-left
+                after:transition-transform after:duration-300
+                hover:after:scale-x-100"
+              >
                 Fill the form →
               </a>
             </motion.div>
 
+            <QuoteFormDialog
+              open={quoteOpen}
+              onClose={() => setQuoteOpen(false)}
+            />
+
 
             {/* Track Shipment */}
             <motion.div
-
               whileHover={{
-                y: -10,
-                scale: 1.03,
-                boxShadow: "0px 20px 40px rgba(0,0,0,0.1)"
+                borderColor: "#166433",
+                borderWidth: 2,
+                scale: 1.03
               }}
-              className="bg-muted rounded-2xl p-8 space-y-4 transition flex flex-col cursor-pointer"
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="bg-muted rounded-2xl p-8 space-y-4 flex flex-col cursor-pointer border border-transparent"
             >
-              <motion.div whileHover={{ rotate: 5, scale: 1.1 }}>
+              <motion.div>
                 <Package className="w-8 h-8 text-primary" />
               </motion.div>
 
@@ -156,8 +179,17 @@ const Contact = () => {
                 <li>Delivery confirmations</li>
               </ul>
 
-              <a href="#" className="font-medium text-primary hover:underline">
-                Contact manager →
+              <a
+                href="tel:+919876543210"
+                className="relative inline-block self-start text-primary font-medium cursor-pointer
+                after:absolute after:left-0 after:-bottom-1 after:h-[2px]
+                after:w-full after:bg-primary
+                after:scale-x-0 after:origin-left
+                after:transition-transform after:duration-300
+                hover:after:scale-x-100"
+              >
+                {/* <Phone className="w-4 h-4" /> */}
+                Call manager →
               </a>
             </motion.div>
 
