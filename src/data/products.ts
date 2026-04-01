@@ -1,8 +1,8 @@
 import catVegetables from "@/assets/cat-vegetables.jpg";
 import catFruits from "@/assets/cat-fruits.jpg";
 import catSpices from "@/assets/cat-spices.png";
-import catRice from "@/assets/cat-rice.jpg";
-import catOilseeds from "@/assets/cat-oilseeds.jpg";
+import catRice from "@/assets/cat-rice.png";
+import catOilseeds from "@/assets/cat-oilseeds.png";
 import catGrains from "@/assets/cat-grains.jpg";
 import catOils from "@/assets/cat-oils.jpg";
 
@@ -254,7 +254,7 @@ export const categories: ProductCategory[] = [
       { name: "Pineapple", slug: "pineapple", image: pineapple, origin: "Kerala, India", quality: "Premium Export", exportCountries: ["UAE", "Qatar", "Saudi Arabia"], certifications: ["APEDA", "FSSAI"] },
       { name: "Lemon", slug: "lemon", image: lemon, origin: "Andhra Pradesh, India", quality: "Grade A Export", exportCountries: ["UAE", "Oman", "Malaysia"], certifications: ["APEDA"] },
       { name: "Coconut", slug: "coconut", image: coconut, origin: "Tamil Nadu, India", quality: "Export Quality", exportCountries: ["UAE" ], certifications: ["APEDA", "FSSAI"] },
-       { name: "Mad  Apple", slug: "Apple", image: apple, origin: "Nashik, India", quality: "Export Quality", exportCountries: ["UK" ], certifications: ["APEDA", "FSSAI"] }
+       { name: "Mud  Apple", slug: "Apple", image: apple, origin: "Nashik, India", quality: "Export Quality", exportCountries: ["UK" ], certifications: ["APEDA", "FSSAI"] }
     ],
   },
   {
