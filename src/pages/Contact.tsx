@@ -323,7 +323,7 @@ const Contact = () => {
                 {[
                   { icon: MapPin, label: "Address", value: "Yogichowk , Surat, Gujarat 395010, India" },
                   { icon: Phone, label: "Phone", value: "+91 93164 90925" },
-                  { icon: Mail, label: "Email", value: "info@akbariexim.com" },
+                  { icon: Mail, label: "Email", value: "info@globalexim.com" },
                   { icon: Clock, label: "Office Hours", value: "Mon - Sat: 9:00 AM – 6:00 PM IST" },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4">
@@ -339,11 +339,7 @@ const Contact = () => {
               </div>
               <Button variant="outline" className="rounded-xl border-primary text-primary hover:bg-primary hover:text-white" asChild>
                 <a href="https://wa.me/919316490925?text=Hello%2C%20I%20am%20interested%20in%20your%20products." target="_blank" rel="noopener noreferrer">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-                    alt="WhatsApp"
-                    className="w-5 h-5"
-                  /> Chat on WhatsApp
+                  <MessageCircle className="w-4 h-4 mr-2" /> Chat on WhatsApp
                 </a>
               </Button>
             </motion.div>
