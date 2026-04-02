@@ -60,7 +60,7 @@ const ProductDetail = () => {
     );
   }
 
-  const whatsappUrl = `https://wa.me/919316490925?text=${encodeURIComponent(`Hello, I am interested in ${product.name}. Please share more details.`)}`;
+  const whatsappUrl = `https://wa.me/919316490925?text=${encodeURIComponent(`Hello, I am interested in *${product.name}*. Please share more details.`)}`;
 
   // Related products from same category
   const relatedProducts = category.products.filter(p => p.slug !== product.slug).slice(0, 4);
