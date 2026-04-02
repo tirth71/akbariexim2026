@@ -14,21 +14,49 @@ interface QuoteFormDialogProps {
 
 const QuoteFormDialog = ({ open, onClose, productName }: QuoteFormDialogProps) => {
   const [form, setForm] = useState({
+
     name: "",
     phone: "",
     email: "",
     product: productName || "",
     message: "",
   });
+  const clientNumber = "919316490925"; // 👉 replace with your client's WhatsApp number
+
+  const whatsappMessage = `📦 *New Inquiry*
+
+👤 Name: ${form.name}
+📞 Phone: ${form.phone}
+📧 Email: ${form.email}
+📦 Product: ${form.product}
+
+📝 Message:
+${form.message}`;
+
+  const whatsappUrl = `https://wa.me/${clientNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name.trim() || !form.email.trim()) {
-      toast.error("Please fill in required fields.");
+
+    if (!form.name.trim() || !form.email.trim() || !form.phone.trim()) {
+      toast.error("Please fill all required fields.");
       return;
     }
-    toast.success("Thank you! We'll get back to you shortly.");
-    setForm({ name: "", phone: "", email: "", product: "", message: "" });
+
+    // Open WhatsApp
+    window.open(whatsappUrl, "_blank");
+
+    toast.success("Redirecting to WhatsApp...");
+
+    // Reset form
+    setForm({
+      name: "",
+      phone: "",
+      email: "",
+      product: "",
+      message: "",
+    });
+
     onClose();
   };
 
