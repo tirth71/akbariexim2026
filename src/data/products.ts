@@ -4,7 +4,7 @@ import catSpices from "@/assets/cat-spices.png";
 import catRice from "@/assets/cat-rice.png";
 import catOilseeds from "@/assets/cat-oilseeds.png";
 import catGrains from "@/assets/cat-grains.jpg";
-import catOils from "@/assets/cat-oils.jpg";
+import catOils from "@/assets/cat-oils.png";
 
 
 import freshOnions from "@/assets/productimage/fresh-onions.png";

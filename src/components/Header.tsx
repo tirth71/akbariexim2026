@@ -76,13 +76,13 @@ const Header = () => {
             <div className="text-[13px] text-gray-500 mt-1 flex items-center gap-1 cursor-pointer"
               onClick={() => window.open("https://translate.google.com", "_blank")}
             >
-              <span>Powered by</span>
+              {/* <span>Powered by</span>
               <img
                 src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_74x24dp.png"
                 alt="Google"
                 className="h-3"
               />
-              <span>Translate</span>
+              <span>Translate</span> */}
             </div>
 
           </div>
