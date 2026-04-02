@@ -240,7 +240,12 @@ const ProductDetail = () => {
               </Button>
               <Button variant="outline" className="flex-1 rounded-xl border-primary text-primary hover:bg-primary/100 h-12 text-base" size="lg" asChild>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp Inquiry
+                   <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                    alt="WhatsApp"
+                    className="w-5 h-5"
+                  />
+                 WhatsApp Inquiry
                 </a>
               </Button>
               <Button variant="outline" className="flex-1 rounded-xl h-12 text-base" size="lg" asChild>

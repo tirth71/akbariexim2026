@@ -180,7 +180,7 @@ const Contact = () => {
               </ul>
 
               <a
-                href="tel:+919876543210"
+                href="tel:+91 9316490925"
                 className="relative inline-block self-start text-primary font-medium cursor-pointer
                 after:absolute after:left-0 after:-bottom-1 after:h-[2px]
                 after:w-full after:bg-primary
