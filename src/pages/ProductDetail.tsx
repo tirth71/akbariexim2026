@@ -235,10 +235,10 @@ const ProductDetail = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
-              <Button className="flex-1 gradient-primary text-primary-foreground rounded-xl border-0 h-12 text-base" size="lg" onClick={() => setQuoteOpen(true)}>
+              <Button className="py-3 flex-1 gradient-primary text-primary-foreground rounded-xl border-0 h-12 text-base" size="lg" onClick={() => setQuoteOpen(true)}>
                 <Send className="w-5 h-5 mr-2" /> Request Quote
               </Button>
-              <Button variant="outline" className="flex-1 rounded-xl border-primary text-primary hover:bg-primary/100 h-12 text-base" size="lg" asChild>
+              <Button variant="outline" className="py-3 flex-1 rounded-xl border-primary text-primary hover:bg-primary/100 h-12 text-base" size="lg" asChild>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                    <img
                     src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
@@ -248,7 +248,7 @@ const ProductDetail = () => {
                  WhatsApp Inquiry
                 </a>
               </Button>
-              <Button variant="outline" className="flex-1 rounded-xl h-12 text-base" size="lg" asChild>
+              <Button variant="outline" className="py-3 flex-1 rounded-xl h-12 text-base" size="lg" asChild>
                 <a href="tel:+919316490925">
                   <Phone className="w-5 h-5 mr-2" /> Call Us
                 </a>
