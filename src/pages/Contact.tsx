@@ -13,9 +13,86 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import emailjs from "@emailjs/browser";
+// const ContactForm = () => {
+//   const [form, setForm] = useState({
+//     name: "",
+//     company: "",
+//     email: "",
+//     phone: "",
+//     country: "",
+//     product: "",
+//     inquiry: "",
+//     message: "",
+//   });
+
+
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", product: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    country: "",
+    product: "",
+    inquiry: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!form.name || !form.email || !form.phone) {
+      toast.error("Please fill required fields");
+      return;
+    }
+
+    setLoading(true);
+
+    emailjs
+      .send(
+        "service_hi5rbld",
+        "template_y39yq21",
+        {
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          phone: form.phone,
+          country: form.country,
+          product: form.product,
+          inquiry: form.inquiry,
+          message: form.message,
+        },
+        "hlCgOCDfGrc_dMvOq"
+      )
+      .then(() => {
+        toast.success("Inquiry sent successfully!");
+
+        setForm({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          country: "",
+          product: "",
+          inquiry: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error("Failed to send email");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+
   const [quoteOpen, setQuoteOpen] = useState(false);
   const container = {
     hidden: {},
@@ -39,15 +116,15 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.name.trim() || !form.email.trim()) {
-      toast.error("Please fill in required fields.");
-      return;
-    }
-    toast.success("Message sent! We'll get back to you within 24 hours.");
-    setForm({ name: "", email: "", phone: "", product: "", message: "" });
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (!form.name.trim() || !form.email.trim()) {
+  //     toast.error("Please fill in required fields.");
+  //     return;
+  //   }
+  //   toast.success("Message sent! We'll get back to you within 24 hours.");
+  //   setForm({ name: "", email: "", phone: "", product: "", message: "" });
+  // };
 
   return (
     <div className="min-h-screen pt-16 overflow-x-hidden">
@@ -211,83 +288,103 @@ const Contact = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
             >
-
               <div>
-                <h3 className="text-2xl font-bold text-foreground mb-8">
+                <h3 className="text-2xl font-bold mb-6">
                   Get a Detailed Quote
                 </h3>
                 <p className="text-muted-foreground text-sm mb-8">
                   Provide us with your requirements and we'll prepare a comprehensive quote with specifications, documentation, and logistics details.
                 </p>
+
               </div>
 
               {/* Grid Fields */}
               <div className="grid md:grid-cols-2 gap-4">
+                <Input
+                  placeholder="Full Name *"
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                />
 
-                <Input placeholder="Full Name *" className="rounded-xl bg-background" required />
-                <Input placeholder="Company Name *" className="rounded-xl bg-background" required />
+                <Input
+                  placeholder="Company Name *"
+                  value={form.company}
+                  onChange={(e) => setForm({ ...form, company: e.target.value })}
+                />
 
-                <Input type="email" placeholder="Email Address *" className="rounded-xl bg-background" required />
-                <Input placeholder="Phone Number *" className="rounded-xl bg-background" required />
+                <Input
+                  type="email"
+                  placeholder="Email Address *"
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                />
 
-                <Input placeholder="Country *" className="rounded-xl bg-background" required />
+                <Input
+                  placeholder="Phone Number *"
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                />
 
-                {/* Product Type */}
-                <Select>
-                  <SelectTrigger className="w-full rounded-xl bg-background border border-border">
+                <Input
+                  placeholder="Country *"
+                  value={form.country}
+                  onChange={(e) => setForm({ ...form, country: e.target.value })}
+                />
+
+                {/* Product */}
+                <Select
+                  value={form.product}
+                  onValueChange={(value) =>
+                    setForm({ ...form, product: value })
+                  }
+                >
+                  <SelectTrigger>
                     <SelectValue placeholder="Select product category" />
                   </SelectTrigger>
 
-                  <SelectContent
-                    position="popper"
-                    sideOffset={6}
-                    className="z-50 rounded-xl shadow-lg [&_[data-highlighted]]:bg-primary [&_[data-highlighted]]:text-white"
-                  >
-                    <SelectItem value="spices">Fresh Vegetables</SelectItem>
-                    <SelectItem value="spices">Premium Fruits</SelectItem>
-                    <SelectItem value="pulses">Premium Spices</SelectItem>
-                    <SelectItem value="nuts">Basmati & Non-Basmati Rice</SelectItem>
-                    <SelectItem value="grains">Oil Seeds</SelectItem>
-                    <SelectItem value="aluminum">Grains & Pulses</SelectItem>
-                    <SelectItem value="copper">Edible Oils</SelectItem>
-
+                  <SelectContent>
+                    <SelectItem value="Fresh Vegetables">Fresh Vegetables</SelectItem>
+                    <SelectItem value="Premium Fruits">Premium Fruits</SelectItem>
+                    <SelectItem value="Premium Spices">Premium Spices</SelectItem>
+                    <SelectItem value="Basmati Rice">Basmati Rice</SelectItem>
+                    <SelectItem value="Oil Seeds">Oil Seeds</SelectItem>
+                    <SelectItem value="Grains & Pulses">Grains & Pulses</SelectItem>
+                    <SelectItem value="Edible Oils">Edible Oils</SelectItem>
                   </SelectContent>
                 </Select>
-
               </div>
 
               {/* Inquiry Type */}
+              <Select
+                value={form.inquiry}
+                onValueChange={(value) =>
+                  setForm({ ...form, inquiry: value })
+                }
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="What can we help you with?" />
+                </SelectTrigger>
+
+                <SelectContent>
+                  <SelectItem value="Request Quote">Request Quote</SelectItem>
+                  <SelectItem value="Samples">Request Samples</SelectItem>
+                  <SelectItem value="Partnership">Partnership Inquiry</SelectItem>
+                  <SelectItem value="Supplier">Become a Supplier</SelectItem>
+                  <SelectItem value="Product Information">Product Information</SelectItem>
+                  <SelectItem value="Other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+
+              {/* Message */}
               <div className="space-y-2">
 
-                <Select>
-                  <SelectTrigger className="w-full rounded-xl bg-background border border-border">
-                    <SelectValue placeholder="What can we help you with?" />
-                  </SelectTrigger>
-
-                  <SelectContent
-                    position="popper"
-                    sideOffset={6}
-                    className="z-50 rounded-xl shadow-lg [&_[data-highlighted]]:bg-primary [&_[data-highlighted]]:text-white"
-                  >
-                    <SelectItem value="quote">Request Quote</SelectItem>
-                    <SelectItem value="samples">Request Samples</SelectItem>
-                    <SelectItem value="partnership">Partnership Inquiry</SelectItem>
-                    <SelectItem value="supplier">Become a Supplier</SelectItem>
-                    <SelectItem value="product">Product Information</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-
-              </div>
-
-              {/* Detailed Requirements */}
-              <div className="space-y-2">
                 <label className="text-sm font-semibold text-foreground">
                   Detailed Requirements *
                 </label>
 
                 <Textarea
                   className="w-full rounded-xl border border-border bg-background px-4 py-4 text-sm leading-6 resize-none h-[250px]"
+
                   placeholder={`Please provide details about:
 
 • Product specifications and grades
@@ -297,20 +394,23 @@ const Contact = () => {
 • Timeline and frequency
 • Quality certifications needed
 • Any special requirements`}
+
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
                 />
               </div>
 
+
+              {/* Button */}
               <Button
                 type="submit"
-                className="gradient-primary text-primary-foreground rounded-xl border-0"
-                size="lg"
+                disabled={loading}
+                className="w-full gradient-primary text-white"
               >
                 <Send className="w-4 h-4 mr-2" />
-                Send Request for Quote
+                {loading ? "Sending..." : "Send Request for Quote"}
               </Button>
-
             </motion.form>
-
 
             {/* Contact Info */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
