@@ -55,8 +55,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_hi5rbld",
-        "template_y39yq21",
+        "service_pid1a6q",
+        "template_nh5a1i6",
         {
           name: form.name,
           company: form.company,
@@ -67,7 +67,7 @@ const Contact = () => {
           inquiry: form.inquiry,
           message: form.message,
         },
-        "hlCgOCDfGrc_dMvOq"
+        "h4poJxYk3BqH5S9a_"
       )
       .then(() => {
         toast.success("Inquiry sent successfully!");
