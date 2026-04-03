@@ -413,7 +413,7 @@ const Contact = () => {
             </motion.form>
 
             {/* Contact Info */}
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
+            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8 ml-10">
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-4">Get In Touch</h2>
                 <p className="text-muted-foreground">Reach out to us for product inquiries, pricing, or bulk orders. Our team responds within 24 hours.</p>
