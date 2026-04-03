@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Carrot, Apple, Flame, Wheat, CircleDot, Grip, Droplets, ChevronRight } from "lucide-react";
 import { categories } from "@/data/products";
@@ -11,9 +11,16 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 const Products = () => {
-  const [activeId, setActiveId] = useState(categories[0].id);
+  const { categoryId } = useParams<{ categoryId?: string }>();
+  const [activeId, setActiveId] = useState(() => categoryId && categories.some((c) => c.id === categoryId) ? categoryId : categories[0].id);
   const [quoteOpen, setQuoteOpen] = useState(false);
   const active = categories.find((c) => c.id === activeId)!;
+
+  useEffect(() => {
+    if (categoryId && categories.some((c) => c.id === categoryId)) {
+      setActiveId(categoryId);
+    }
+  }, [categoryId]);
 
   return (
     <div className="min-h-screen pt-16 bg-muted">

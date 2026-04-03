@@ -58,6 +58,7 @@ function AppWrapper() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/certificates" element={<Certificates />} />
+          <Route path="/products/:categoryId" element={<Products />} />
         </Routes>
 
         <Footer />

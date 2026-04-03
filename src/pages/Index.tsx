@@ -490,6 +490,7 @@ const current = testimonials[testimonialIdx];
             <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mt-2">Our Product <span className="text-primary">Categories</span></h2>
             <p className="text-muted-foreground mt-3 max-w-xl mx-auto">Premium agricultural products sourced directly from India's finest farms.</p>
           </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {categories.slice(0, 3).map((cat, i) => (
               <motion.div
@@ -499,7 +500,7 @@ const current = testimonials[testimonialIdx];
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
               >
-                <Link to="/products" className="group block rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                <Link to={`/products/${cat.id}`} className="group block rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
                   <div className="relative aspect-[3/2] overflow-hidden">
                     <img src={cat.image} alt={cat.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/30 to-transparent" />
@@ -512,6 +513,7 @@ const current = testimonials[testimonialIdx];
               </motion.div>
             ))}
           </div>
+          
           <motion.div className="text-center mt-10" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
             <Button size="lg" className="gradient-primary text-primary-foreground rounded-xl border-0" asChild>
               <Link to="/products">View All Products <ArrowRight className="w-4 h-4 ml-2" /></Link>
