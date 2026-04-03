@@ -1,10 +1,11 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, MessageCircle, Send, Shield, Globe, Package, MapPin, Droplets, Box, Star, CheckCircle, TrendingUp, Truck, Phone } from "lucide-react";
-import { getCategory, getProduct, categories } from "@/data/products";
+import { ArrowLeft, Send, Shield, Globe, Package, MapPin, Droplets, Box, Star, CheckCircle, TrendingUp, Truck, Phone } from "lucide-react";
+import { getCategory, getProduct } from "@/data/products";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import QuoteFormDialog from "@/components/QuoteFormDialog";
+
 
 import ae from "@/assets/flags/ae.svg";
 import sa from "@/assets/flags/sa.svg";
@@ -302,20 +303,59 @@ const ProductDetail = () => {
             <h2 className="text-2xl font-extrabold text-foreground mb-6">Related Products</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {relatedProducts.map((rp, i) => (
-                <motion.div key={rp.slug} custom={i} variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                  <Link
-                    to={`/products/${categoryId}/${rp.slug}`}
-                    className="block bg-background rounded-2xl p-5 border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300 group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
-                      <span className="font-semibold text-foreground group-hover:text-primary transition-colors">{rp.name}</span>
-                    </div>
-                    {rp.origin && <p className="text-xs text-muted-foreground mt-2 ml-6">{rp.origin}</p>}
-                    {rp.quality && <p className="text-xs text-primary/70 font-medium mt-1 ml-6">{rp.quality}</p>}
-                  </Link>
-                </motion.div>
-              ))}
+  <motion.div
+    key={rp.slug}
+    custom={i}
+    variants={fadeUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+  >
+    <Link
+      to={`/products/${categoryId}/${rp.slug}`}
+      className="flex items-center justify-between 
+      bg-background rounded-2xl px-5 py-4 
+      border border-border 
+      hover:shadow-lg hover:border-primary/20 
+      transition-all duration-300 group"
+    >
+      
+      {/* LEFT SIDE TEXT */}
+      <div className="flex items-start gap-3 flex-1">
+        <div className="w-3 h-3 mt-2 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+
+        <div>
+          <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
+            {rp.name}
+          </span>
+
+          {rp.origin && (
+            <p className="text-xs text-muted-foreground mt-1">
+              {rp.origin}
+            </p>
+          )}
+
+          {rp.quality && (
+            <p className="text-xs text-primary/70 font-medium mt-1">
+              {rp.quality}
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* RIGHT SIDE IMAGE */}
+      <div className="ml-4 flex-shrink-0">
+        <img
+          src={rp.image}
+          alt={rp.name}
+          className="w-20 h-16 object-cover rounded-lg shadow-sm 
+          group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+
+    </Link>
+  </motion.div>
+))}
             </div>
           </motion.section>
         )}
