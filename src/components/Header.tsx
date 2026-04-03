@@ -44,7 +44,7 @@ const Header = () => {
 
 <span className="font-bold text-lg text-bl">
   𝐀𝐊𝐁𝐀𝐑𝐈{" "}
-  <span className="bg-gradient-to-r from-green-800 via-green-400 to-green-800 bg-[length:200%_100%] bg-clip-text text-transparent animate-shine">
+  <span className="bg-gradient-to-r from-blue-800 via-blue-400 to-blue-800 bg-[length:200%_100%] bg-clip-text text-transparent animate-shine">
     𝐄𝐗𝐈𝐌
   </span>
 </span>
